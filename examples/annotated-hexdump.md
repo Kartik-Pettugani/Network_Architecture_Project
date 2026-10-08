@@ -1,6 +1,6 @@
 # Annotated Hexdump: BHTTP/1 Protocol Exchange
 
-This document provides a byte-by-byte annotated hexdump of a complete live request and response captured from the `ObserveServer` and `BcurlClient` implementation over a TCP connection.
+This document provides a byte-by-byte annotated hexdump of a complete live request and response captured from the `bserveServer` and `BcurlClient` implementation over a TCP connection.
 
 The captured exchange demonstrates a client requesting `/index.html` from the server running on `localhost:9000`.
 
@@ -62,7 +62,7 @@ The captured exchange demonstrates a client requesting `/index.html` from the se
 0000  00 00 40 02 00 00 00 00  01 01 00 c8 05 05 00 06  |..@.............|
 0010  32 30 30 20 4f 4b 01 00  09 74 65 78 74 2f 68 74  |200 OK...text/ht|
 0020  6d 6c 02 00 03 32 34 31  03 00 0a 6b 65 65 70 2d  |ml...241...keep-|
-0030  61 6c 69 76 65 04 00 11  4f 62 73 65 72 76 65 53  |alive...ObserveS|
+0030  61 6c 69 76 65 04 00 11  4f 62 73 65 72 76 65 53  |alive...bserveS|
 0040  65 72 76 65 72 2f 31 2e  30                       |erver/1.0|
 ```
 
@@ -112,12 +112,12 @@ The captured exchange demonstrates a client requesting `/index.html` from the se
 | `0029 - 002a` | `00 0a` | Header value length (16-bit big-endian) | 10 bytes |
 | `002b - 0034` | `6b 65 65 70 2d 61 6c 69 76 65` | Value UTF-8 string | `"keep-alive"` |
 
-##### Header 5: `server: ObserveServer/1.0`
+##### Header 5: `server: bserveServer/1.0`
 | Byte Range | Hex Value | Description | Semantic Value |
 |---|---|---|---|
 | `0035` | `04` | Header name table index | Index 4 (`server`) |
 | `0036 - 0037` | `00 11` | Header value length (16-bit big-endian) | 17 bytes |
-| `0038 - 0048` | `4f 62 73 65 72 76 65 53 65 72 76 65 72 2f 31 2e 30` | Value UTF-8 string | `"ObserveServer/1.0"` |
+| `0038 - 0048` | `4f 62 73 65 72 76 65 53 65 72 76 65 72 2f 31 2e 30` | Value UTF-8 string | `"bserveServer/1.0"` |
 
 ---
 
@@ -135,7 +135,7 @@ The captured exchange demonstrates a client requesting `/index.html` from the se
 0060  65 73 74 20 53 65 72 76  65 72 3c 2f 74 69 74 6c  |est Server</titl|
 0070  65 3e 0a 3c 2f 68 65 61  64 3e 0a 3c 62 6f 64 79  |e>.</head>.<body|
 0080  3e 0a 20 20 20 20 3c 68  31 3e 57 65 6c 63 6f 6d  |>.    <h1>Welcom|
-0090  65 20 74 6f 20 4f 62 73  65 72 76 65 53 65 72 76  |e to ObserveServ|
+0090  65 20 74 6f 20 4f 62 73  65 72 76 65 53 65 72 76  |e to bserveServ|
 00a0  65 72 3c 2f 68 31 3e 0a  20 20 20 20 3c 70 3e 54  |er</h1>.    <p>T|
 00b0  68 69 73 20 70 61 67 65  20 77 61 73 20 73 65 72  |his page was ser|
 00c0  76 65 64 20 6f 76 65 72  20 74 68 65 20 42 48 54  |ved over the BHT|

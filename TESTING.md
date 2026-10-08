@@ -14,11 +14,11 @@ javac -d out src/*.java
 ## 2. Start Server
 Run the server on port 9000 using `./www` as the document root:
 ```bash
-java -cp out ObserveServer ./www 9000
+java -cp out bserveServer ./www 9000
 ```
 Or with wrapper script:
 ```bash
-./observe ./www 9000
+./bserve ./www 9000
 ```
 
 ---
